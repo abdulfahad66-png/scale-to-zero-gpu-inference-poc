@@ -27,6 +27,10 @@ longer the thing to attack.
 
 Cost of the whole exercise, including one wrong turn: **~$2.10**.
 
+**Deeper reading:** [`docs/RESULTS.md`](docs/RESULTS.md) has every timeline,
+phase breakdown and raw-data index. [`docs/FINDINGS.md`](docs/FINDINGS.md) has
+the seven failures with full error text and root causes.
+
 ---
 
 ## Why this problem exists
@@ -356,7 +360,7 @@ a second GPU.
 .
 ├── README.md
 ├── docs/
-│   ├── FINDINGS.md          the six failures, with root causes
+│   ├── FINDINGS.md          the seven failures, with root causes
 │   └── RESULTS.md           every measurement and how it was taken
 ├── scripts/                 the tested, fixed scripts (00–99)
 └── artifacts/
