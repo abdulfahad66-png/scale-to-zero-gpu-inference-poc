@@ -1,0 +1,5 @@
+NAME                                       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE    VOLUMEMODE
+persistentvolumeclaim/vllm-model-weights   Bound    pvc-80d22f30-4d9f-428c-918b-aa39b50cf254   10Gi       RWO            standard-rwo   <unset>                 102m   Filesystem
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE    VOLUMEMODE
+persistentvolume/pvc-80d22f30-4d9f-428c-918b-aa39b50cf254   10Gi       RWO            Delete           Bound    llm-gateway/vllm-model-weights   standard-rwo   <unset>                          102m   Filesystem

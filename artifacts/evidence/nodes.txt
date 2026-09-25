@@ -1,0 +1,2 @@
+NAME                                             STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP    OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-llm-gateway-poc-default-pool-3660c165-x875   Ready    <none>   104m   v1.35.8-gke.1036000   10.142.0.3    34.73.28.155   Container-Optimized OS from Google   6.12.94+         containerd://2.2.7

@@ -1,0 +1,339 @@
+addonsConfig:
+  dnsCacheConfig:
+    enabled: true
+  gcePersistentDiskCsiDriverConfig:
+    enabled: true
+  horizontalPodAutoscaling: {}
+  httpLoadBalancing: {}
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+  nodeReadinessConfig: {}
+anonymousAuthenticationConfig:
+  mode: LIMITED
+autopilot: {}
+autoscaling:
+  autoprovisioningNodePoolDefaults:
+    imageType: COS_CONTAINERD
+    management:
+      autoRepair: true
+      autoUpgrade: true
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+  autoscalingProfile: BALANCED
+clusterIpv4Cidr: 10.24.0.0/14
+controlPlaneEgress:
+  mode: VIA_CONTROL_PLANE
+controlPlaneEndpointsConfig:
+  dnsEndpointConfig:
+    allowExternalTraffic: false
+    enableK8sCertsViaDns: false
+    enableK8sTokensViaDns: false
+    endpoint: gke-d3fc53804cfc41d39f3bb8780fa53aa437ac-425110783194.us-east1-d.gke.goog
+  ipEndpointsConfig:
+    authorizedNetworksConfig: {}
+    enablePublicEndpoint: true
+    enabled: true
+    privateEndpoint: 10.142.0.2
+    publicEndpoint: 35.231.118.216
+createTime: '2026-09-25T11:13:35+00:00'
+currentMasterVersion: 1.35.8-gke.1036000
+currentNodeCount: 1
+currentNodeVersion: 1.35.8-gke.1036000
+databaseEncryption:
+  currentState: CURRENT_STATE_DECRYPTED
+  state: DECRYPTED
+defaultMaxPodsConstraint:
+  maxPodsPerNode: '110'
+endpoint: 35.231.118.216
+enterpriseConfig:
+  clusterTier: STANDARD
+etag: 04263190-13a9-497b-8696-7e7c1fe75524
+id: d3fc53804cfc41d39f3bb8780fa53aa437ac6f58b5754b379416b8416d3f4158
+initialClusterVersion: 1.35.8-gke.1036000
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-default-pool-3660c165-grp
+- https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-gpu-pool-284ad53e-grp
+ipAllocationPolicy:
+  clusterIpv4Cidr: 10.24.0.0/14
+  clusterIpv4CidrBlock: 10.24.0.0/14
+  clusterSecondaryRangeName: gke-llm-gateway-poc-pods-d3fc5380
+  defaultPodIpv4RangeUtilization: 0.001
+  networkTierConfig:
+    networkTier: NETWORK_TIER_DEFAULT
+  podCidrOverprovisionConfig: {}
+  servicesIpv4Cidr: 34.118.224.0/20
+  servicesIpv4CidrBlock: 34.118.224.0/20
+  stackType: IPV4
+  useIpAliases: true
+labelFingerprint: b42f1a4a
+legacyAbac: {}
+location: us-east1-d
+locations:
+- us-east1-d
+loggingConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+loggingService: logging.googleapis.com/kubernetes
+maintenancePolicy:
+  resourceVersion: e3b0c442
+masterAuth:
+  clientCertificateConfig: {}
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMRENDQXBTZ0F3SUJBZ0lRTXN3aTQzRWtXazFVUnpoUkVaR3A5REFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlSbVlXRmtNR1ZtTXkwM1kyRmhMVFJpWXpJdE9UYzFNaTFpT1RJelpUVTVOV00wTVRNdwpJQmNOTWpZd09USTFNVEF4TXpNMldoZ1BNakExTmpBNU1UY3hNVEV6TXpaYU1DOHhMVEFyQmdOVkJBTVRKR1poCllXUXdaV1l6TFRkallXRXROR0pqTWkwNU56VXlMV0k1TWpObE5UazFZelF4TXpDQ0FhSXdEUVlKS29aSWh2Y04KQVFFQkJRQURnZ0dQQURDQ0FZb0NnZ0dCQUxmeWNscFFuQUVCK0VtY1JCU21QbXNSV1JidTJhSXhlVElqVG11NgozRVZteEwyWTNhVHgvTWlhNEliN1VGUERnSFJxMndsMG14WlJGS1lMZGdzUU5kbUpVUHBSVVBYTHgzTGNjTjFMClZYVXNZYXdLT2h4ZHRoSEpCNjRmMTJNSVNMTkFmRVJzNjF0cEZiQlVFYkdoMTJ0R2c3Z2FXdzdPTmpoaG9Xam0Kc0o5aDk5aDJHaUIrUUpYaWRtVEoyNDlacEY3Q3hac2pudzlwZElhNFRkNnpESFJDbG1adXViK052aDBSc2VZcgp0Wm5GQ0lQOEc5b0xCbEN6K2ZEbjZKUkVDclJyU3I1cmVFM09wdnAxMHVMUkFiT0F0SWEzVHFCUDZvSWpad05OClRUNWZBZkpKeFNrQ2RPMHdla0FBUTU1NnZjeHludGpXYkt4TWpsNEVyakhrVjJPK2h5Tno5Z241M04xYnNHQzcKcnhkUDBtWUxFbnpQYWdjSzh3aWJrMks3WTZDMlZVckE2QVZhaWI3RWJFN1ZyVDhZanRQTXBML3V1NFpENnpiVgpzOFVZUi9vZk1YZ1FrOE9pQUFHWFpzZTdvMktkUlJGUFp2VkdEMlMrd2VqbHdySjdXNW1SN1Iwd1drR3dsMVh5CkVBQ0RhQmFRcW9WNGtRMHNMQkRnclhmMFVRSURBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWdRd0R3WUQKVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUrMEhyc2NBSkZCMm4rTWZLeGdzWTlkL1JVN013RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dHQkFJN0hrakRpTk1WT1UrOFA2bElhZ05XUVM1NEFMOXUyNUFrSlE2V0pjNHJSClZieHR6ZWpaRkpwWnNlWTRjRGhCMXhXSFFHdHJ3YUdFajM0OWRHNnZSMjF4eVlGK3FGSFo1MTFQWHhtMTRjTG8KVUJRRlBHTU05TzI2S3pJUzBDYkJZcWdkd1I1cW9TWXFIcGo5cU1pdnZyMzIrVFR3T3hRK3lhWk9iL1grNVBCWgpJaGg0blhrcFU4V2N0VW5FKzEwNU1zK2tOd2NvdjhVQXM2SmV3SDVvRHMwWTVjbWx4dGZKYkp6UlVsM0NyRzZFCktya2FGQVo3OVhwV2hPajVvS1RJU0F3SUFBR2dwUHc3QnlyNlQ4WnlZNU1ac2llZG1pL1VnNGtyU0IyTWI0aloKVUh3YzFFeXp4d2hYSVZPbkdORmc3TUxocWlPWi9TL1NMazUyaklaWkF3cE5xSGpsaGtCTkYyTmxGRzJZZzJzaQpaeU5vQ3M5MWFRM2wybWozSml5WG1KbG1ML0t4QTFvSy9rY0NOdVRWTEZzd0d0bFFmREpTSEdiZVV4VWFqRFdQCis2bVVOOWRuaXAyOHdSczE4VFVNbi9jaEZMcGdvNkxqUUNQeTZybzJ2bWoyMlM1MW1RK0EwNHg4Z0FCelpPR3oKK2FWNStWeS9Ha1JseGQyRTB4S2xzUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+masterAuthorizedNetworksConfig: {}
+monitoringConfig:
+  advancedDatapathObservabilityConfig: {}
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - STORAGE
+    - HPA
+    - POD
+    - DAEMONSET
+    - DEPLOYMENT
+    - STATEFULSET
+    - CADVISOR
+    - KUBELET
+    - DCGM
+    - JOBSET
+  managedPrometheusConfig:
+    enabled: true
+monitoringService: monitoring.googleapis.com/kubernetes
+name: llm-gateway-poc
+network: default
+networkConfig:
+  network: projects/YOUR_PROJECT_ID/global/networks/default
+  serviceExternalIpsConfig: {}
+  subnetwork: projects/YOUR_PROJECT_ID/regions/us-east1/subnetworks/default
+nodeConfig:
+  bootDisk:
+    diskType: pd-balanced
+    sizeGb: '50'
+  diskSizeGb: 50
+  diskType: pd-balanced
+  effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+  imageType: COS_CONTAINERD
+  kubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+    maxParallelImagePulls: 2
+  machineType: e2-standard-4
+  metadata:
+    disable-legacy-endpoints: 'true'
+  nodeImageConfig:
+    image: gke-1358-gke1036000-cos-125-19216-532-123-c-pre
+    imageProject: gke-node-images
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  resourceLabels:
+    delete-after: session
+    goog-gke-node-pool-provisioning-model: on-demand
+    owner: fahad
+    purpose: ai-learning-poc
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+nodeCreationConfig:
+  nodeCreationMode: VIA_KUBELET
+nodePoolAutoConfig:
+  nodeKubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+nodePoolDefaults:
+  nodeConfigDefaults:
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+    nodeKubeletConfig:
+      insecureKubeletReadonlyPortEnabled: false
+nodePools:
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 2
+    minNodeCount: 1
+  config:
+    bootDisk:
+      diskType: pd-balanced
+      sizeGb: '50'
+    diskSizeGb: 50
+    diskType: pd-balanced
+    effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+    imageType: COS_CONTAINERD
+    kubeletConfig:
+      insecureKubeletReadonlyPortEnabled: false
+      maxParallelImagePulls: 2
+    machineType: e2-standard-4
+    metadata:
+      disable-legacy-endpoints: 'true'
+    nodeImageConfig:
+      image: gke-1358-gke1036000-cos-125-19216-532-123-c-pre
+      imageProject: gke-node-images
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    resourceLabels:
+      delete-after: session
+      goog-gke-node-pool-provisioning-model: on-demand
+      owner: fahad
+      purpose: ai-learning-poc
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 0f355475-6b22-492c-9cb4-991f3c242562
+  initialNodeCount: 1
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-default-pool-3660c165-grp
+  kubeletCertInfo:
+    tpmBootstrapCertExpireTime: '2031-09-24T11:14:56Z'
+  locations:
+  - us-east1-d
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '110'
+  name: default-pool
+  networkConfig:
+    networkTierConfig:
+      networkTier: NETWORK_TIER_DEFAULT
+    podIpv4CidrBlock: 10.24.0.0/14
+    podIpv4RangeUtilization: 0.001
+    podRange: gke-llm-gateway-poc-pods-d3fc5380
+    subnetwork: projects/YOUR_PROJECT_ID/regions/us-east1/subnetworks/default
+  podIpv4CidrSize: 24
+  selfLink: https://container.googleapis.com/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/clusters/llm-gateway-poc/nodePools/default-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.35.8-gke.1036000
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1
+  config:
+    accelerators:
+    - acceleratorCount: '1'
+      acceleratorType: nvidia-tesla-t4
+      gpuDriverInstallationConfig:
+        gpuDriverVersion: DEFAULT
+    bootDisk:
+      diskType: pd-balanced
+      sizeGb: '100'
+    diskSizeGb: 100
+    diskType: pd-balanced
+    effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+    gcfsConfig:
+      enabled: true
+    imageType: COS_CONTAINERD
+    kubeletConfig:
+      insecureKubeletReadonlyPortEnabled: false
+      maxParallelImagePulls: 3
+    machineType: n1-standard-4
+    metadata:
+      disable-legacy-endpoints: 'true'
+    nodeImageConfig:
+      image: gke-1358-gke1036000-cos-125-19216-532-123-c-nvda
+      imageProject: gke-node-images
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    resourceLabels:
+      goog-gke-accelerator-type: nvidia-tesla-t4
+      goog-gke-node-pool-provisioning-model: on-demand
+    secondaryBootDisks:
+    - diskImage: global/images/vllm-node-cache-20260925
+      mode: CONTAINER_IMAGE_CACHE
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+    taints:
+    - effect: NO_SCHEDULE
+      key: nvidia.com/gpu
+      value: present
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 95ae5201-dc67-4602-97b3-baf8881577db
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-gpu-pool-284ad53e-grp
+  kubeletCertInfo:
+    tpmBootstrapCertExpireTime: '2031-09-24T12:18:09Z'
+  locations:
+  - us-east1-d
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '110'
+  name: gpu-pool
+  networkConfig:
+    networkTierConfig:
+      networkTier: NETWORK_TIER_DEFAULT
+    podIpv4CidrBlock: 10.24.0.0/14
+    podIpv4RangeUtilization: 0.001
+    podRange: gke-llm-gateway-poc-pods-d3fc5380
+    subnetwork: projects/YOUR_PROJECT_ID/regions/us-east1/subnetworks/default
+  podIpv4CidrSize: 24
+  selfLink: https://container.googleapis.com/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/clusters/llm-gateway-poc/nodePools/gpu-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.35.8-gke.1036000
+notificationConfig:
+  pubsub: {}
+podAutoscaling:
+  hpaProfile: PERFORMANCE
+privateClusterConfig:
+  privateEndpoint: 10.142.0.2
+  publicEndpoint: 35.231.118.216
+rbacBindingConfig:
+  enableInsecureBindingSystemAuthenticated: true
+  enableInsecureBindingSystemUnauthenticated: true
+releaseChannel:
+  channel: REGULAR
+resourceLabels:
+  delete-after: session
+  owner: fahad
+  purpose: ai-learning-poc
+securityPostureConfig:
+  mode: BASIC
+  vulnerabilityMode: VULNERABILITY_MODE_UNSPECIFIED
+selfLink: https://container.googleapis.com/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/clusters/llm-gateway-poc
+servicesIpv4Cidr: 34.118.224.0/20
+shieldedNodes:
+  enabled: true
+status: RUNNING
+subnetwork: default
+userManagedKeysConfig: {}
+workloadIdentityConfig:
+  workloadPool: YOUR_PROJECT_ID.svc.id.goog
+zone: us-east1-d

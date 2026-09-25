@@ -1,0 +1,5 @@
+NAME                     PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+dynamic-rwo              pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   true                   104m
+premium-rwo              pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   true                   104m
+standard                 kubernetes.io/gce-pd    Delete          Immediate              true                   104m
+standard-rwo (default)   pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   true                   104m

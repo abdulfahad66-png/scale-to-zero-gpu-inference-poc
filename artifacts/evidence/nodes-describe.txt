@@ -1,0 +1,147 @@
+Name:               gke-llm-gateway-poc-default-pool-3660c165-x875
+Roles:              <none>
+Labels:             addon.gke.io/node-local-dns-ds-ready=true
+                    beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=e2-standard-4
+                    beta.kubernetes.io/os=linux
+                    cloud.google.com/gke-boot-disk=pd-balanced
+                    cloud.google.com/gke-container-runtime=containerd
+                    cloud.google.com/gke-cpu-scaling-level=4
+                    cloud.google.com/gke-logging-variant=DEFAULT
+                    cloud.google.com/gke-max-pods-per-node=110
+                    cloud.google.com/gke-memory-gb-scaling-level=16
+                    cloud.google.com/gke-netd-ready=true
+                    cloud.google.com/gke-nodepool=default-pool
+                    cloud.google.com/gke-os-distribution=cos
+                    cloud.google.com/gke-provisioning=standard
+                    cloud.google.com/gke-stack-type=IPV4
+                    cloud.google.com/machine-family=e2
+                    cloud.google.com/private-node=false
+                    disk-type.gke.io/pd-balanced=true
+                    disk-type.gke.io/pd-extreme=true
+                    disk-type.gke.io/pd-ssd=true
+                    disk-type.gke.io/pd-standard=true
+                    failure-domain.beta.kubernetes.io/region=us-east1
+                    failure-domain.beta.kubernetes.io/zone=us-east1-d
+                    iam.gke.io/gke-metadata-server-enabled=true
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=gke-llm-gateway-poc-default-pool-3660c165-x875
+                    kubernetes.io/os=linux
+                    node.kubernetes.io/instance-type=e2-standard-4
+                    topology.gke.io/zone=us-east1-d
+                    topology.kubernetes.io/region=us-east1
+                    topology.kubernetes.io/zone=us-east1-d
+Annotations:        container.googleapis.com/instance_id: 1333156898217388368
+                    csi.volume.kubernetes.io/nodeid:
+                      {"pd.csi.storage.gke.io":"projects/YOUR_PROJECT_ID/zones/us-east1-d/instances/gke-llm-gateway-poc-default-pool-3660c165-x875","podcer...
+                    node.alpha.kubernetes.io/ttl: 0
+                    node.gke.io/last-applied-node-labels:
+                      addon.gke.io/node-local-dns-ds-ready=true,cloud.google.com/gke-boot-disk=pd-balanced,cloud.google.com/gke-container-runtime=containerd,clo...
+                    node.gke.io/last-applied-node-taints: 
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 25 Sep 2026 14:17:37 +0300
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  gke-llm-gateway-poc-default-pool-3660c165-x875
+  AcquireTime:     <unset>
+  RenewTime:       Fri, 25 Sep 2026 16:02:38 +0300
+Conditions:
+  Type                                              Status  LastHeartbeatTime                 LastTransitionTime                Reason                                                       Message
+  ----                                              ------  -----------------                 ------------------                ------                                                       -------
+  DeprecatedUsingV1Alpha2Cri                        False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedUsingV1Alpha2CriNotDetected                        No deprecation risk: did not use v1alpha2 CRI
+  FrequentKubeletRestart                            False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoFrequentKubeletRestart                                     kubelet is functioning properly
+  KubeletConfigChanged                              False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoKubeletConfigChangeDetected                                No changes detected to the kubelet configuration file.
+  SysctlChanged                                     True    Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:17 +0300   NodeSysctlChange                                             {"unmanaged": {"kernel.cad_pid": "1"}}
+  DeprecatedAuthsFieldInContainerdConfiguration     False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedAuthsFieldInContainerdConfigurationNotDetected     No deprecation risk: did not find any deprecated 'auths' field in containerd's config
+  FrequentDockerRestart                             False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoFrequentDockerRestart                                      docker is functioning properly
+  CorruptDockerOverlay2                             False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoCorruptDockerOverlay2                                      docker overlay2 is functioning properly
+  UnsupportedEBPFPrograms                           False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   UnsupportedEBPFProgramsNotDetected                           No unsupported EBPF programs detected
+  Swap                                              False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   SwapNotDetected                                              Swap is not active
+  FrequentUnregisterNetDevice                       False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoFrequentUnregisterNetDevice                                node is functioning properly
+  KernelDeadlock                                    False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   KernelHasNoDeadlock                                          kernel has no deadlock
+  XfsShutdown                                       False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   XfsHasNotShutDown                                            XFS has not shutdown
+  DeprecatedMirrorsFieldInContainerdConfiguration   False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedMirrorsFieldInContainerdConfigurationNotDetected   No deprecation risk: did not find any deprecated 'mirrors' field in containerd's config
+  DeprecatedPullingSchemaV1Image                    False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedPullingSchemaV1ImageDetected                       No deprecation risk: did not pull any schema v1 images
+  ResourceExhausted                                 False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   ResourcesOK                                                  System resources are within normal range.
+  StoragePressureRootFileSystem                     False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   StoragePressureRootFileSystemNotDetected                     Root filesystem has no storage pressure
+  ReadOnlyRootFileSystem                            False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   ReadOnlyRootFileSystemNotDetected                            Root filesystem is not read only
+  CperHardwareErrorFatal                            False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   CperHardwareHasNoFatalError                                  UEFI CPER has no fatal error
+  DeprecatedOtherContainerdFeatures                 False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedOtherContainerdFeaturesNotDetected                 No deprecation risk: did not find any deprecations other than 3 configs fields (auths/configs/mirrors), pulling schema v1 images and using v1alpha2 CRI.
+  DeprecatedConfigsFieldInContainerdConfiguration   False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DeprecatedConfigsFieldInContainerdConfigurationNotDetected   No deprecation risk: did not find any deprecated 'configs' field in containerd's config
+  DPv2MigrationUnsupportedCNI                       False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   DPv2MigrationUnsupportedCNINotDetected                       No unsupported CNI detected for DPv2 migration
+  FrequentContainerdRestart                         False   Fri, 25 Sep 2026 15:57:59 +0300   Fri, 25 Sep 2026 14:16:16 +0300   NoFrequentContainerdRestart                                  containerd is functioning properly
+  NetworkUnavailable                                False   Fri, 25 Sep 2026 14:17:38 +0300   Fri, 25 Sep 2026 14:17:38 +0300   RouteCreated                                                 NodeController create implicit route
+  MemoryPressure                                    False   Fri, 25 Sep 2026 16:02:32 +0300   Fri, 25 Sep 2026 14:15:46 +0300   KubeletHasSufficientMemory                                   kubelet has sufficient memory available
+  DiskPressure                                      False   Fri, 25 Sep 2026 16:02:32 +0300   Fri, 25 Sep 2026 14:15:46 +0300   KubeletHasNoDiskPressure                                     kubelet has no disk pressure
+  PIDPressure                                       False   Fri, 25 Sep 2026 16:02:32 +0300   Fri, 25 Sep 2026 14:15:46 +0300   KubeletHasSufficientPID                                      kubelet has sufficient PID available
+  Ready                                             True    Fri, 25 Sep 2026 16:02:32 +0300   Fri, 25 Sep 2026 14:17:40 +0300   KubeletReady                                                 kubelet is posting ready status
+Addresses:
+  InternalIP:  10.142.0.3
+  ExternalIP:  34.73.28.155
+  Hostname:    gke-llm-gateway-poc-default-pool-3660c165-x875
+Capacity:
+  cpu:                4
+  ephemeral-storage:  47227284Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16380052Ki
+  pods:               110
+Allocatable:
+  cpu:                3920m
+  ephemeral-storage:  18828602911
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             13591700Ki
+  pods:               110
+System Info:
+  Machine ID:                 45beedde56e432a6de1253d4744a6d09
+  System UUID:                45beedde-56e4-32a6-de12-53d4744a6d09
+  Boot ID:                    0436f00d-638c-4829-bfd7-69e0a2cef3af
+  Kernel Version:             6.12.94+
+  OS Image:                   Container-Optimized OS from Google
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://2.2.7
+  Kubelet Version:            v1.35.8-gke.1036000
+PodCIDR:                      10.24.0.0/24
+PodCIDRs:                     10.24.0.0/24
+ProviderID:                   gce://YOUR_PROJECT_ID/us-east1-d/gke-llm-gateway-poc-default-pool-3660c165-x875
+Non-terminated Pods:          (25 in total)
+  Namespace                   Name                                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                                         ------------  ----------  ---------------  -------------  ---
+  gke-managed-cim             kube-state-metrics-0                                         105m (2%)     1 (25%)     130Mi (0%)       530Mi (3%)     106m
+  gmp-system                  collector-wdnm2                                              5m (0%)       0 (0%)      36M (0%)         3032M (21%)    105m
+  gmp-system                  gmp-operator-85494dd678-tb4fp                                1m (0%)       0 (0%)      16M (0%)         2G (14%)       105m
+  keda                        keda-admission-webhooks-78fb47bd97-9tmdh                     100m (2%)     1 (25%)     100Mi (0%)       1000Mi (7%)    104m
+  keda                        keda-operator-5bb8bd6bc5-4hdll                               100m (2%)     1 (25%)     100Mi (0%)       1000Mi (7%)    104m
+  keda                        keda-operator-metrics-apiserver-6f9bb597fc-vshzw             100m (2%)     1 (25%)     100Mi (0%)       1000Mi (7%)    104m
+  kube-system                 event-exporter-gke-7d6db6fdb9-d2g6c                          3m (0%)       0 (0%)      100Mi (0%)       0 (0%)         106m
+  kube-system                 fluentbit-gke-2mpcj                                          105m (2%)     1 (25%)     230Mi (1%)       565Mi (4%)     105m
+  kube-system                 gke-metadata-server-bwnmc                                    100m (2%)     0 (0%)      100Mi (0%)       200Mi (1%)     105m
+  kube-system                 gke-metrics-agent-5ghnx                                      21m (0%)      1 (25%)     145Mi (1%)       180Mi (1%)     105m
+  kube-system                 konnectivity-agent-788bff6d55-r8gd8                          15m (0%)      1 (25%)     60Mi (0%)        155Mi (1%)     99m
+  kube-system                 konnectivity-agent-autoscaler-5995475ff5-9pz2j               10m (0%)      0 (0%)      10M (0%)         0 (0%)         105m
+  kube-system                 kube-dns-9c745f5dc-966cp                                     270m (6%)     1 (25%)     155Mi (1%)       255Mi (1%)     99m
+  kube-system                 kube-dns-autoscaler-f6ddd7b7c-jgv62                          20m (0%)      0 (0%)      10Mi (0%)        0 (0%)         105m
+  kube-system                 kube-proxy-gke-llm-gateway-poc-default-pool-3660c165-x875    100m (2%)     0 (0%)      0 (0%)           0 (0%)         105m
+  kube-system                 kube-state-metrics-d75fbc75f-wdp89                           0 (0%)        0 (0%)      0 (0%)           0 (0%)         103m
+  kube-system                 l7-default-backend-8b59d7448-jr77j                           10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         105m
+  kube-system                 metrics-server-v1.35.1-5cf5679484-5t98j                      43m (1%)      43m (1%)    55Mi (0%)        55Mi (0%)      105m
+  kube-system                 netd-zd2xc                                                   8m (0%)       1 (25%)     65Mi (0%)        65Mi (0%)      105m
+  kube-system                 node-local-dns-sdwh8                                         30m (0%)      1 (25%)     50Mi (0%)        65Mi (0%)      105m
+  kube-system                 pdcsi-node-nncpm                                             15m (0%)      1 (25%)     50Mi (0%)        530Mi (3%)     104m
+  llm-gateway                 gateway-54b859c889-rdxh8                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         102m
+  llm-gateway                 grafana-86f5b9f7b8-4dlvd                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         84m
+  llm-gateway                 prometheus-5d5d54674f-6vmjw                                  0 (0%)        0 (0%)      0 (0%)           0 (0%)         101m
+  llm-gateway                 redis-7f6b49c679-sgh6n                                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         102m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests          Limits
+  --------           --------          ------
+  cpu                1161m (29%)       11043m (281%)
+  memory             1603406720 (11%)  10904025600 (78%)
+  ephemeral-storage  0 (0%)            0 (0%)
+  hugepages-1Gi      0 (0%)            0 (0%)
+  hugepages-2Mi      0 (0%)            0 (0%)
+Events:              <none>

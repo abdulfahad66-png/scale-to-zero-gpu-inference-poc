@@ -1,0 +1,14 @@
+2026-09-25T12:19:50Z   TriggeredScaleUp                         vllm-7cd9b5478c-65lct                                   Pod triggered scale-up: [{https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroups/gke-llm-gateway-poc-gpu-pool-284ad53e-grp 0->1 (max: 1)}]
+2026-09-25T12:49:32Z   ScaleDown                                netd-h2vwv                                              deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx              marked the node as toBeDeleted/unschedulable
+2026-09-25T12:49:32Z   ScaleDownEmpty                           cluster-autoscaler-status                               Scale-down: removing empty node "gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx"
+2026-09-25T12:49:32Z   ScaleDown                                dcgm-exporter-ff7q7                                     deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                dcgm-exporter-6fmww                                     deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                gke-metrics-agent-zt2fb                                 deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                pdcsi-node-d45l5                                        deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                fluentbit-gke-68d5g                                     deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                nvidia-gpu-device-plugin-small-cos-p4f8g                deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                gke-metadata-server-c6fh2                               deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                maintenance-handler-vkwp5                               deleting pod for node scale down
+2026-09-25T12:49:32Z   ScaleDown                                collector-zjv8f                                         deleting pod for node scale down
+2026-09-25T12:49:34Z   ScaleDownEmpty                           cluster-autoscaler-status                               Scale-down: empty node gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx removed

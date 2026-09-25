@@ -1,0 +1,18 @@
+archiveSizeBytes: '9014485696'
+creationTimestamp: '2026-09-25T05:14:57.756-07:00'
+description: Image created by Daisy in workflow "secondary-disk-image" on behalf of
+  fahadsheikh.
+diskSizeGb: '50'
+enableConfidentialCompute: false
+family: secondary-disk-image
+id: '8399036394069809967'
+kind: compute#image
+labelFingerprint: 42WmSpB8rSM=
+name: vllm-node-cache-20260925
+selfLink: https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/global/images/vllm-node-cache-20260925
+sourceDisk: https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/disks/secondary-disk-image-disk
+sourceDiskId: '8199347614833696102'
+sourceType: RAW
+status: READY
+storageLocations:
+- us

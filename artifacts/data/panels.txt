@@ -1,0 +1,13 @@
+1|panel|text
+2|vllm-http-inference-request-rate-post-v1-completions|timeseries
+3|redis-job-queue-depth-vs-keda-scale-up-threshold|timeseries
+4|hpa-keda-autoscaler-trigger-observed-metric-vs-target|timeseries
+5|kube-state-metrics-keda-managed-pod-replicas|timeseries
+6|kube-state-metrics-cluster-nodes-total-vs-gpu-cluster-autosc|timeseries
+7|dcgm-gpu-sm-utilization|timeseries
+8|dcgm-gpu-power-draw|timeseries
+9|dcgm-gpu-hbm-memory-footprint|timeseries
+10|dcgm-gpu-temperature|timeseries
+11|vllm-prompt-tokens-sec-ingress-throughput|timeseries
+12|vllm-generation-tokens-sec-egress-throughput|timeseries
+13|vllm-time-to-first-token-p95-cold-start-signal|timeseries

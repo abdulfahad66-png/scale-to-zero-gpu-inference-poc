@@ -1,0 +1,89 @@
+TIME                   TYPE      REASON                       OBJECT                       MESSAGE
+2026-09-25T12:40:05Z   Normal    ScalingReplicaSet            worker                       Scaled up replica set worker-65b7d9f889 from 0 to 1
+2026-09-25T12:52:02Z   Normal    UpdatedLoadBalancer          gateway                      Updated load balancer with new hosts
+2026-09-25T12:35:05Z   Normal    SuccessfulRescale            keda-hpa-worker-autoscaler   New size: 2; reason: external metric s0-redis-inference_queue(&LabelSelector{MatchLabels:map[string]string{scaledobject.keda.sh/name: worker-autoscaler,},MatchExpressions:[]LabelSelectorRequirement{},}) above target
+2026-09-25T12:35:05Z   Normal    ScalingReplicaSet            worker                       Scaled up replica set worker-65b7d9f889 from 1 to 2
+2026-09-25T12:39:17Z   Normal    ScalingReplicaSet            worker                       Scaled down replica set worker-65b7d9f889 from 2 to 0
+2026-09-25T12:40:05Z   Normal    SuccessfulRescale            keda-hpa-worker-autoscaler   New size: 1; reason: external metric s0-redis-inference_queue(&LabelSelector{MatchLabels:map[string]string{scaledobject.keda.sh/name: worker-autoscaler,},MatchExpressions:[]LabelSelectorRequirement{},}) below target
+<nil>                  Normal    KEDAScaleTargetActivated     worker-autoscaler            Scaled apps/v1.Deployment llm-gateway/worker from 0 to 1, triggered by s0-redis-inference_queue
+2026-09-25T12:19:47Z   Normal    SuccessfulCreate             worker-65b7d9f889            Created pod: worker-65b7d9f889-z655n
+2026-09-25T12:29:44Z   Normal    Pulled                       worker-65b7d9f889-z655n      Container image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest" already present on machine and can be accessed by the pod
+2026-09-25T12:19:47Z   Normal    Scheduled                    worker-65b7d9f889-z655n      Successfully assigned llm-gateway/worker-65b7d9f889-z655n to gke-llm-gateway-poc-default-pool-3660c165-x875
+2026-09-25T12:29:44Z   Normal    Started                      worker-65b7d9f889-z655n      Container started
+2026-09-25T12:29:44Z   Normal    Created                      worker-65b7d9f889-z655n      Container created
+2026-09-25T12:19:48Z   Warning   FailedScheduling             vllm-7cd9b5478c-65lct        0/1 nodes are available: 1 node(s) didn't match Pod's node affinity/selector. no new claims to deallocate, preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+<nil>                  Normal    KEDAScaleTargetActivated     vllm-autoscaler              Scaled apps/v1.Deployment llm-gateway/vllm from 0 to 1, triggered by s0-redis-inference_queue
+2026-09-25T12:19:48Z   Normal    SuccessfulCreate             vllm-7cd9b5478c              Created pod: vllm-7cd9b5478c-65lct
+2026-09-25T12:31:18Z   Normal    ScalingReplicaSet            vllm                         Scaled up replica set vllm-7cd9b5478c from 0 to 1
+2026-09-25T12:19:50Z   Normal    TriggeredScaleUp             vllm-7cd9b5478c-65lct        Pod triggered scale-up: [{https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroups/gke-llm-gateway-poc-gpu-pool-284ad53e-grp 0->1 (max: 1)}]
+2026-09-25T12:20:19Z   Normal    SuccessfulCreate             worker-65b7d9f889            Created pod: worker-65b7d9f889-xf58q
+2026-09-25T12:20:19Z   Normal    Scheduled                    worker-65b7d9f889-xf58q      Successfully assigned llm-gateway/worker-65b7d9f889-xf58q to gke-llm-gateway-poc-default-pool-3660c165-x875
+2026-09-25T12:29:49Z   Normal    Started                      worker-65b7d9f889-xf58q      Container started
+2026-09-25T12:29:49Z   Normal    Pulled                       worker-65b7d9f889-xf58q      Container image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest" already present on machine and can be accessed by the pod
+2026-09-25T12:29:49Z   Normal    Created                      worker-65b7d9f889-xf58q      Container created
+2026-09-25T12:21:30Z   Warning   FailedScheduling             vllm-7cd9b5478c-65lct        0/2 nodes are available: 1 node(s) didn't match Pod's node affinity/selector, 1 node(s) had untolerated taint(s). no new claims to deallocate, preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.
+2026-09-25T12:21:31Z   Warning   FailedScheduling             vllm-7cd9b5478c-65lct        0/2 nodes are available: 1 Insufficient nvidia.com/gpu, 1 node(s) didn't match Pod's node affinity/selector. no new claims to deallocate, preemption: 0/2 nodes are available: 2 Preemption is not helpful for scheduling.
+2026-09-25T12:21:32Z   Normal    Scheduled                    dcgm-exporter-ff7q7          Successfully assigned llm-gateway/dcgm-exporter-ff7q7 to gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx
+2026-09-25T12:21:32Z   Normal    SuccessfulCreate             dcgm-exporter                Created pod: dcgm-exporter-ff7q7
+2026-09-25T12:21:33Z   Normal    Pulling                      dcgm-exporter-ff7q7          Pulling image "nvcr.io/nvidia/k8s/dcgm-exporter:3.3.5-3.4.1-ubuntu22.04"
+2026-09-25T12:22:20Z   Normal    Scheduled                    vllm-7cd9b5478c-65lct        Successfully assigned llm-gateway/vllm-7cd9b5478c-65lct to gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx
+2026-09-25T12:22:25Z   Normal    SuccessfulAttachVolume       vllm-7cd9b5478c-65lct        AttachVolume.Attach succeeded for volume "pvc-80d22f30-4d9f-428c-918b-aa39b50cf254" 
+2026-09-25T12:22:32Z   Normal    Pulling                      vllm-7cd9b5478c-65lct        Pulling image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest"
+2026-09-25T12:22:43Z   Normal    Pulled                       dcgm-exporter-ff7q7          Successfully pulled image "nvcr.io/nvidia/k8s/dcgm-exporter:3.3.5-3.4.1-ubuntu22.04" in 1m9.815s (1m9.898s including waiting). Image size: 819106510 bytes.
+2026-09-25T12:22:44Z   Normal    Created                      dcgm-exporter-ff7q7          Container created
+2026-09-25T12:22:44Z   Normal    Started                      dcgm-exporter-ff7q7          Container started
+2026-09-25T12:22:45Z   Normal    Started                      vllm-7cd9b5478c-65lct        Container started
+2026-09-25T12:22:45Z   Normal    Created                      vllm-7cd9b5478c-65lct        Container created
+2026-09-25T12:22:45Z   Normal    Pulled                       vllm-7cd9b5478c-65lct        Successfully pulled image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest" in 13.297s (13.297s including waiting). Image size: 8730576300 bytes.
+2026-09-25T12:24:52Z   Warning   Unhealthy                    vllm-7cd9b5478c-65lct        Readiness probe failed: Get "http://10.24.1.6:8000/health": dial tcp 10.24.1.6:8000: connect: connection refused
+2026-09-25T12:30:45Z   Warning   BackOff                      worker-65b7d9f889-z655n      Back-off restarting failed container worker in pod worker-65b7d9f889-z655n_llm-gateway(a124ee84-1457-4584-93c5-2450e38d2c04)
+2026-09-25T12:29:29Z   Warning   BackOff                      worker-65b7d9f889-xf58q      Back-off restarting failed container worker in pod worker-65b7d9f889-xf58q_llm-gateway(67817575-8649-4bb3-bbac-fed9920e7475)
+<nil>                  Normal    KEDAScaleTargetDeactivated   worker-autoscaler            Deactivated apps/v1.Deployment llm-gateway/worker from 2 to 0
+2026-09-25T12:30:47Z   Normal    SuccessfulDelete             worker-65b7d9f889            Deleted pod: worker-65b7d9f889-z655n
+2026-09-25T12:30:47Z   Normal    SuccessfulDelete             worker-65b7d9f889            Deleted pod: worker-65b7d9f889-xf58q
+2026-09-25T12:30:47Z   Normal    Killing                      worker-65b7d9f889-xf58q      Stopping container worker
+2026-09-25T12:30:48Z   Normal    Killing                      vllm-7cd9b5478c-65lct        Stopping container vllm
+2026-09-25T12:30:48Z   Normal    SuccessfulDelete             vllm-7cd9b5478c              Deleted pod: vllm-7cd9b5478c-65lct
+<nil>                  Normal    KEDAScaleTargetDeactivated   vllm-autoscaler              Deactivated apps/v1.Deployment llm-gateway/vllm from 1 to 0
+2026-09-25T12:39:18Z   Normal    ScalingReplicaSet            vllm                         Scaled down replica set vllm-7cd9b5478c from 1 to 0
+2026-09-25T12:30:49Z   Warning   Unhealthy                    vllm-7cd9b5478c-65lct        Readiness probe failed: Get "http://10.24.1.6:8000/health": read tcp 10.24.1.1:39164->10.24.1.6:8000: read: connection reset by peer
+2026-09-25T12:31:05Z   Normal    Scheduled                    worker-65b7d9f889-p7wtt      Successfully assigned llm-gateway/worker-65b7d9f889-p7wtt to gke-llm-gateway-poc-default-pool-3660c165-x875
+2026-09-25T12:31:05Z   Normal    SuccessfulCreate             worker-65b7d9f889            Created pod: worker-65b7d9f889-p7wtt
+2026-09-25T12:38:52Z   Normal    Created                      worker-65b7d9f889-p7wtt      Container created
+2026-09-25T12:38:52Z   Normal    Pulled                       worker-65b7d9f889-p7wtt      Container image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest" already present on machine and can be accessed by the pod
+2026-09-25T12:38:52Z   Normal    Started                      worker-65b7d9f889-p7wtt      Container started
+2026-09-25T12:31:18Z   Normal    SuccessfulCreate             vllm-7cd9b5478c              Created pod: vllm-7cd9b5478c-h8t99
+2026-09-25T12:31:18Z   Normal    Scheduled                    vllm-7cd9b5478c-h8t99        Successfully assigned llm-gateway/vllm-7cd9b5478c-h8t99 to gke-llm-gateway-poc-gpu-pool-284ad53e-kbbx
+<nil>                  Normal    KEDAScaleTargetActivated     vllm-autoscaler              Scaled apps/v1.Deployment llm-gateway/vllm from 0 to 1, triggered by s0-redis-inference_queue
+2026-09-25T12:31:25Z   Normal    SuccessfulAttachVolume       vllm-7cd9b5478c-h8t99        AttachVolume.Attach succeeded for volume "pvc-80d22f30-4d9f-428c-918b-aa39b50cf254" 
+2026-09-25T12:31:27Z   Normal    Pulling                      vllm-7cd9b5478c-h8t99        Pulling image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest"
+2026-09-25T12:31:27Z   Normal    Pulled                       vllm-7cd9b5478c-h8t99        Successfully pulled image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest" in 640ms (640ms including waiting). Image size: 8730576300 bytes.
+2026-09-25T12:31:27Z   Normal    Created                      vllm-7cd9b5478c-h8t99        Container created
+2026-09-25T12:31:27Z   Normal    Started                      vllm-7cd9b5478c-h8t99        Container started
+2026-09-25T12:33:38Z   Warning   Unhealthy                    vllm-7cd9b5478c-h8t99        Readiness probe failed: Get "http://10.24.1.7:8000/health": dial tcp 10.24.1.7:8000: connect: connection refused
+2026-09-25T12:35:05Z   Normal    SuccessfulCreate             worker-65b7d9f889            Created pod: worker-65b7d9f889-ff99p
+2026-09-25T12:35:05Z   Normal    Scheduled                    worker-65b7d9f889-ff99p      Successfully assigned llm-gateway/worker-65b7d9f889-ff99p to gke-llm-gateway-poc-default-pool-3660c165-x875
+2026-09-25T12:38:57Z   Normal    Pulled                       worker-65b7d9f889-ff99p      Container image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest" already present on machine and can be accessed by the pod
+2026-09-25T12:38:57Z   Normal    Created                      worker-65b7d9f889-ff99p      Container created
+2026-09-25T12:38:57Z   Normal    Started                      worker-65b7d9f889-ff99p      Container started
+2026-09-25T12:38:26Z   Warning   BackOff                      worker-65b7d9f889-p7wtt      Back-off restarting failed container worker in pod worker-65b7d9f889-p7wtt_llm-gateway(66d2c722-8876-45ee-a7a7-fc3c9a8819b5)
+2026-09-25T12:38:29Z   Warning   BackOff                      worker-65b7d9f889-ff99p      Back-off restarting failed container worker in pod worker-65b7d9f889-ff99p_llm-gateway(be0b3d25-b9f7-4501-9a5f-36653e07de32)
+<nil>                  Normal    KEDAScaleTargetDeactivated   worker-autoscaler            Deactivated apps/v1.Deployment llm-gateway/worker from 2 to 0
+2026-09-25T12:39:17Z   Normal    Killing                      worker-65b7d9f889-ff99p      Stopping container worker
+2026-09-25T12:39:17Z   Normal    SuccessfulDelete             worker-65b7d9f889            Deleted pod: worker-65b7d9f889-ff99p
+2026-09-25T12:39:17Z   Normal    SuccessfulDelete             worker-65b7d9f889            Deleted pod: worker-65b7d9f889-p7wtt
+2026-09-25T12:39:17Z   Normal    Killing                      worker-65b7d9f889-p7wtt      Stopping container worker
+<nil>                  Normal    KEDAScaleTargetDeactivated   vllm-autoscaler              Deactivated apps/v1.Deployment llm-gateway/vllm from 1 to 0
+2026-09-25T12:39:18Z   Normal    Killing                      vllm-7cd9b5478c-h8t99        Stopping container vllm
+2026-09-25T12:39:18Z   Normal    SuccessfulDelete             vllm-7cd9b5478c              Deleted pod: vllm-7cd9b5478c-h8t99
+2026-09-25T12:40:05Z   Normal    SuccessfulCreate             worker-65b7d9f889            Created pod: worker-65b7d9f889-54nq9
+2026-09-25T12:40:06Z   Normal    Scheduled                    worker-65b7d9f889-54nq9      Successfully assigned llm-gateway/worker-65b7d9f889-54nq9 to gke-llm-gateway-poc-default-pool-3660c165-x875
+2026-09-25T12:40:06Z   Normal    Created                      worker-65b7d9f889-54nq9      Container created
+2026-09-25T12:40:06Z   Normal    Pulled                       worker-65b7d9f889-54nq9      Container image "us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest" already present on machine and can be accessed by the pod
+2026-09-25T12:40:06Z   Normal    Started                      worker-65b7d9f889-54nq9      Container started
+<nil>                  Normal    KEDAScaleTargetDeactivated   worker-autoscaler            Deactivated apps/v1.Deployment llm-gateway/worker from 1 to 0
+2026-09-25T12:40:17Z   Normal    SuccessfulDelete             worker-65b7d9f889            Deleted pod: worker-65b7d9f889-54nq9
+2026-09-25T12:40:17Z   Normal    Killing                      worker-65b7d9f889-54nq9      Stopping container worker
+2026-09-25T12:40:17Z   Normal    ScalingReplicaSet            worker                       Scaled down replica set worker-65b7d9f889 from 1 to 0
+2026-09-25T12:49:32Z   Normal    Killing                      dcgm-exporter-ff7q7          Stopping container dcgm-exporter
+2026-09-25T12:49:32Z   Normal    ScaleDown                    dcgm-exporter-ff7q7          deleting pod for node scale down

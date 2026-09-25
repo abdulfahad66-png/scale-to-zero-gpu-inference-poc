@@ -1,0 +1,146 @@
+---
+autoscaling:
+  enabled: true
+  locationPolicy: BALANCED
+  maxNodeCount: 2
+  minNodeCount: 1
+config:
+  bootDisk:
+    diskType: pd-balanced
+    sizeGb: '50'
+  diskSizeGb: 50
+  diskType: pd-balanced
+  effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+  imageType: COS_CONTAINERD
+  kubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+    maxParallelImagePulls: 2
+  machineType: e2-standard-4
+  metadata:
+    disable-legacy-endpoints: 'true'
+  nodeImageConfig:
+    image: gke-1358-gke1036000-cos-125-19216-532-123-c-pre
+    imageProject: gke-node-images
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  resourceLabels:
+    delete-after: session
+    goog-gke-node-pool-provisioning-model: on-demand
+    owner: fahad
+    purpose: ai-learning-poc
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+etag: 0f355475-6b22-492c-9cb4-991f3c242562
+initialNodeCount: 1
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-default-pool-3660c165-grp
+kubeletCertInfo:
+  tpmBootstrapCertExpireTime: '2031-09-24T11:14:56Z'
+locations:
+- us-east1-d
+management:
+  autoRepair: true
+  autoUpgrade: true
+maxPodsConstraint:
+  maxPodsPerNode: '110'
+name: default-pool
+networkConfig:
+  networkTierConfig:
+    networkTier: NETWORK_TIER_DEFAULT
+  podIpv4CidrBlock: 10.24.0.0/14
+  podRange: gke-llm-gateway-poc-pods-d3fc5380
+  subnetwork: projects/YOUR_PROJECT_ID/regions/us-east1/subnetworks/default
+podIpv4CidrSize: 24
+selfLink: https://container.googleapis.com/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/clusters/llm-gateway-poc/nodePools/default-pool
+status: RUNNING
+upgradeSettings:
+  maxSurge: 1
+  strategy: SURGE
+version: 1.35.8-gke.1036000
+---
+autoscaling:
+  enabled: true
+  locationPolicy: BALANCED
+  maxNodeCount: 1
+config:
+  accelerators:
+  - acceleratorCount: '1'
+    acceleratorType: nvidia-tesla-t4
+    gpuDriverInstallationConfig:
+      gpuDriverVersion: DEFAULT
+  bootDisk:
+    diskType: pd-balanced
+    sizeGb: '100'
+  diskSizeGb: 100
+  diskType: pd-balanced
+  effectiveCgroupMode: EFFECTIVE_CGROUP_MODE_V2
+  gcfsConfig:
+    enabled: true
+  imageType: COS_CONTAINERD
+  kubeletConfig:
+    insecureKubeletReadonlyPortEnabled: false
+    maxParallelImagePulls: 3
+  machineType: n1-standard-4
+  metadata:
+    disable-legacy-endpoints: 'true'
+  nodeImageConfig:
+    image: gke-1358-gke1036000-cos-125-19216-532-123-c-nvda
+    imageProject: gke-node-images
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  resourceLabels:
+    goog-gke-accelerator-type: nvidia-tesla-t4
+    goog-gke-node-pool-provisioning-model: on-demand
+  secondaryBootDisks:
+  - diskImage: global/images/vllm-node-cache-20260925
+    mode: CONTAINER_IMAGE_CACHE
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+  taints:
+  - effect: NO_SCHEDULE
+    key: nvidia.com/gpu
+    value: present
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+etag: 95ae5201-dc67-4602-97b3-baf8881577db
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/instanceGroupManagers/gke-llm-gateway-poc-gpu-pool-284ad53e-grp
+kubeletCertInfo:
+  tpmBootstrapCertExpireTime: '2031-09-24T12:18:09Z'
+locations:
+- us-east1-d
+management:
+  autoRepair: true
+  autoUpgrade: true
+maxPodsConstraint:
+  maxPodsPerNode: '110'
+name: gpu-pool
+networkConfig:
+  networkTierConfig:
+    networkTier: NETWORK_TIER_DEFAULT
+  podIpv4CidrBlock: 10.24.0.0/14
+  podRange: gke-llm-gateway-poc-pods-d3fc5380
+  subnetwork: projects/YOUR_PROJECT_ID/regions/us-east1/subnetworks/default
+podIpv4CidrSize: 24
+selfLink: https://container.googleapis.com/v1/projects/YOUR_PROJECT_ID/zones/us-east1-d/clusters/llm-gateway-poc/nodePools/gpu-pool
+status: RUNNING
+upgradeSettings:
+  maxSurge: 1
+  strategy: SURGE
+version: 1.35.8-gke.1036000

@@ -1,0 +1,47 @@
+NAME                              READY   STATUS      RESTARTS   AGE    IP           NODE                                             NOMINATED NODE   READINESS GATES
+pod/gateway-54b859c889-rdxh8      1/1     Running     0          102m   10.24.0.19   gke-llm-gateway-poc-default-pool-3660c165-x875   <none>           <none>
+pod/grafana-86f5b9f7b8-4dlvd      2/2     Running     0          84m    10.24.0.28   gke-llm-gateway-poc-default-pool-3660c165-x875   <none>           <none>
+pod/prometheus-5d5d54674f-6vmjw   1/1     Running     0          101m   10.24.0.21   gke-llm-gateway-poc-default-pool-3660c165-x875   <none>           <none>
+pod/redis-7f6b49c679-sgh6n        2/2     Running     0          102m   10.24.0.17   gke-llm-gateway-poc-default-pool-3660c165-x875   <none>           <none>
+pod/vllm-model-init-8nkpt         0/1     Completed   0          102m   10.24.0.20   gke-llm-gateway-poc-default-pool-3660c165-x875   <none>           <none>
+
+NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)             AGE    SELECTOR
+service/dcgm-exporter   ClusterIP      34.118.231.71    <none>         9400/TCP            101m   app=dcgm-exporter
+service/gateway         LoadBalancer   34.118.239.29    34.75.48.130   80:31900/TCP        102m   app=gateway
+service/grafana         ClusterIP      34.118.237.67    <none>         3000/TCP            101m   app=grafana
+service/prometheus      ClusterIP      34.118.226.88    <none>         9090/TCP            101m   app=prometheus
+service/redis           ClusterIP      34.118.232.41    <none>         6379/TCP,9121/TCP   102m   app=redis
+service/vllm            ClusterIP      34.118.230.135   <none>         8000/TCP            102m   app=vllm
+
+NAME                           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                      AGE    CONTAINERS      IMAGES                                                     SELECTOR
+daemonset.apps/dcgm-exporter   0         0         0       0            0           cloud.google.com/gke-accelerator=nvidia-tesla-t4   101m   dcgm-exporter   nvcr.io/nvidia/k8s/dcgm-exporter:3.3.5-3.4.1-ubuntu22.04   app=dcgm-exporter
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS             IMAGES                                                                      SELECTOR
+deployment.apps/gateway      1/1     1            1           102m   gateway                us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/gateway:latest       app=gateway
+deployment.apps/grafana      1/1     1            1           101m   grafana,renderer       grafana/grafana:latest,grafana/grafana-image-renderer:latest                app=grafana
+deployment.apps/prometheus   1/1     1            1           101m   prometheus             prom/prometheus:latest                                                      app=prometheus
+deployment.apps/redis        1/1     1            1           102m   redis,redis-exporter   redis:7-alpine,oliver006/redis_exporter:latest                              app=redis
+deployment.apps/vllm         0/0     0            0           102m   vllm                   us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest   app=vllm
+deployment.apps/worker       0/0     0            0           102m   worker                 us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest        app=worker
+
+NAME                                    DESIRED   CURRENT   READY   AGE    CONTAINERS             IMAGES                                                                      SELECTOR
+replicaset.apps/gateway-54b859c889      1         1         1       102m   gateway                us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/gateway:latest       app=gateway,pod-template-hash=54b859c889
+replicaset.apps/gateway-5ccf5dc985      0         0         0       102m   gateway                gateway:local                                                               app=gateway,pod-template-hash=5ccf5dc985
+replicaset.apps/grafana-5bbb4bbbd9      0         0         0       101m   grafana,renderer       grafana/grafana:latest,grafana/grafana-image-renderer:latest                app=grafana,pod-template-hash=5bbb4bbbd9
+replicaset.apps/grafana-68c84cc55d      0         0         0       84m    grafana,renderer       grafana/grafana:latest,grafana/grafana-image-renderer:latest                app=grafana,pod-template-hash=68c84cc55d
+replicaset.apps/grafana-86f5b9f7b8      1         1         1       84m    grafana,renderer       grafana/grafana:latest,grafana/grafana-image-renderer:latest                app=grafana,pod-template-hash=86f5b9f7b8
+replicaset.apps/prometheus-5d5d54674f   1         1         1       101m   prometheus             prom/prometheus:latest                                                      app=prometheus,pod-template-hash=5d5d54674f
+replicaset.apps/redis-7f6b49c679        1         1         1       102m   redis,redis-exporter   redis:7-alpine,oliver006/redis_exporter:latest                              app=redis,pod-template-hash=7f6b49c679
+replicaset.apps/vllm-5c764665b9         0         0         0       101m   vllm                   vllm/vllm-openai:latest                                                     app=vllm,pod-template-hash=5c764665b9
+replicaset.apps/vllm-6977989c56         0         0         0       102m   vllm                   vllm/vllm-openai                                                            app=vllm,pod-template-hash=6977989c56
+replicaset.apps/vllm-79c95c5cd9         0         0         0       102m   vllm                   vllm/vllm-openai:latest                                                     app=vllm,pod-template-hash=79c95c5cd9
+replicaset.apps/vllm-7cd9b5478c         0         0         0       43m    vllm                   us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/vllm-openai:latest   app=vllm,pod-template-hash=7cd9b5478c
+replicaset.apps/worker-57d6696865       0         0         0       102m   worker                 worker:local                                                                app=worker,pod-template-hash=57d6696865
+replicaset.apps/worker-65b7d9f889       0         0         0       102m   worker                 us-docker.pkg.dev/YOUR_PROJECT_ID/llm-gateway-poc/worker:latest        app=worker,pod-template-hash=65b7d9f889
+
+NAME                                                             REFERENCE           TARGETS     MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/keda-hpa-vllm-autoscaler     Deployment/vllm     0/5 (avg)   1         1         0          101m
+horizontalpodautoscaler.autoscaling/keda-hpa-worker-autoscaler   Deployment/worker   0/5 (avg)   1         2         0          101m
+
+NAME                        STATUS     COMPLETIONS   DURATION   AGE    CONTAINERS         IMAGES             SELECTOR
+job.batch/vllm-model-init   Complete   1/1           44s        102m   model-downloader   python:3.11-slim   batch.kubernetes.io/controller-uid=6dd34d72-0f67-4b31-a45d-c413e3fc5176
